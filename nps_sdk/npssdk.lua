@@ -3,7 +3,6 @@ local services = require"services"
 local def_conf = require"configuration"
 
 local npssdk = {
-    dev = "https://sandbox.nps.com.ar/ws.php",
     SANDBOX_ENV = "https://sandbox.nps.com.ar/ws.php",
     STAGING_ENV = "https://implemetacion.nps.com.ar/ws.php",
     PRODUCTION_ENV = "https://service2.nps.com.ar/ws.php",

@@ -8,7 +8,7 @@ Supports Lua 5.1, 5.2 and 5.3
 ## How to install
 
 ```
-tdb
+luarocks install npssdk
 ```
 
 ## Configuration

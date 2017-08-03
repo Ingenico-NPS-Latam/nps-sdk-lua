@@ -22,8 +22,8 @@ function SoapClient.call(service, params)
     soap.https = https
     utils.log(final_params, conf.log_level, conf.log_file)
     local ns, meth, ent = soap.call {
-         url = conf.environ,
-         soapaction = conf.environ .. service,
+         url = conf.environment,
+         soapaction = conf.environment .. service,
          method = service,
          namespace = "ns3",
          entries = {final_params}

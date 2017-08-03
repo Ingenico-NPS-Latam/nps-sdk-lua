@@ -17,7 +17,7 @@ It's a basic configuration of the SDK
 
 ```lua
 local nps = require("npssdk")
-nps.configuration.environ = nps.SANDBOX_ENV
+nps.configuration.environment = nps.SANDBOX_ENV
 nps.configuration.secret_key = "_YOUR_SECRET_KEY_"
 ```
 
@@ -30,7 +30,6 @@ local p2p = {}
 
 p2p.psp_Version="2.2"
 p2p.psp_MerchantId="psp_test"
-p2p.psp_SecureHash="3347988f4fd623170bfdcad1afc5eec9"
 p2p.psp_TxSource="WEB"
 p2p.psp_MerchTxRef=uuid()
 p2p.psp_MerchOrderId=uuid()
@@ -49,13 +48,13 @@ resp = nps.payonline_2p(p2p)
 
 ```
 
-## Environments
+## environmentments
 
 ```lua
 local nps = require("npssdk")
-nps.configuration.environ = nps.SANDBOX_ENV
-nps.configuration.environ = nps.STAGING_ENV
-nps.configuration.environ = nps.PRODUCTION_ENV
+nps.configuration.environment = nps.SANDBOX_ENV
+nps.configuration.environment = nps.STAGING_ENV
+nps.configuration.environment = nps.PRODUCTION_ENV
 ```
 
 ## Advanced configurations
@@ -64,7 +63,7 @@ Nps SDK allows you to log what’s happening with you request inside of our SDK,
 
 ```lua
 local nps = require("npssdk")
-nps.configuration.environ = nps.SANDBOX_ENV
+nps.configuration.environment = nps.SANDBOX_ENV
 nps.configuration.secret_key = "_YOUR_SECRET_KEY_"
 nps.configuration.debug = true
 ```
@@ -74,7 +73,7 @@ If you have the debug option enabled, the sdk can write the output generated fro
 
 ```lua
 local nps = require("npssdk")
-nps.configuration.environ = nps.SANDBOX_ENV
+nps.configuration.environment = nps.SANDBOX_ENV
 nps.configuration.secret_key = "_YOUR_SECRET_KEY_"
 nps.configuration.debug = true
 nps.configuration.log_file = "path/to/your/file.log"
@@ -86,7 +85,7 @@ The logging.DEBUG level will write information about the request to let develope
 
 ```lua
 local nps = require("npssdk")
-nps.configuration.environ = nps.SANDBOX_ENV
+nps.configuration.environment = nps.SANDBOX_ENV
 nps.configuration.secret_key = "_YOUR_SECRET_KEY_"
 nps.configuration.debug = true
 nps.configuration.log_level = "DEBUG"
@@ -96,7 +95,7 @@ Sanitize allows the SDK to truncate to a fixed size some fields that could make 
 
 ```lua
 local nps = require("npssdk")
-nps.configuration.environ = nps.SANDBOX_ENV
+nps.configuration.environment = nps.SANDBOX_ENV
 nps.configuration.secret_key = "_YOUR_SECRET_KEY_"
 nps.configuration.sanitize = true
 ```
@@ -105,7 +104,7 @@ you can change the timeout of the request.
 
 ```lua
 local nps = require("npssdk")
-nps.configuration.environ = nps.SANDBOX_ENV
+nps.configuration.environment = nps.SANDBOX_ENV
 nps.configuration.secret_key = "_YOUR_SECRET_KEY_"
 nps.configuration.timeout = 60
 ```

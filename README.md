@@ -48,7 +48,7 @@ resp = nps.payonline_2p(p2p)
 
 ```
 
-## environmentments
+## environments
 
 ```lua
 local nps = require("npssdk")

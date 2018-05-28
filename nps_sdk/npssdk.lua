@@ -4,8 +4,8 @@ local def_conf = require"configuration"
 
 local npssdk = {
     SANDBOX_ENV = "https://sandbox.nps.com.ar/ws.php",
-    STAGING_ENV = "https://implemetacion.nps.com.ar/ws.php",
-    PRODUCTION_ENV = "https://service2.nps.com.ar/ws.php",
+    STAGING_ENV = "https://implementacion.nps.com.ar/ws.php",
+    PRODUCTION_ENV = "https://services2.nps.com.ar/ws.php",
     configuration = def_conf
 }
 npssdk.__index = npssdk

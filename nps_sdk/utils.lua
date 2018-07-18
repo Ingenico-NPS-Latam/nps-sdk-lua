@@ -263,7 +263,7 @@ function Utils.add_add_details(params)
     if (params["psp_MerchantAdditionalDetails"]) then
         add_details = params["psp_MerchantAdditionalDetails"]
     end
-    add_details["SdkInfo"] = "SDK Lua " .. version.version
+    add_details["SdkInfo"] = "Lua SDK Version: " .. version.version
     params["psp_MerchantAdditionalDetails"] = add_details
     return params
 end

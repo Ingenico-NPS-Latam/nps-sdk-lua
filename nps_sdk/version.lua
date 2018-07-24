@@ -1,4 +1,4 @@
-local version = "1.0.5"
+local version = "1.0.6"
 version.__index = version
 
 return version

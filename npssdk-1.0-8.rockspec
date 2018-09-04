@@ -1,8 +1,8 @@
 package = "npssdk"
-version = "1.0-7"
+version = "1.0-8"
 source = {
    url = "git://github.com/Ingenico-NPS-Latam/nps-sdk-lua.git",
-   tag = "1.0.7"
+   tag = "1.0.8"
 }
 description = {
    summary = "A Lua SDK for Ingenico ePayments - NPS LatAm Services",

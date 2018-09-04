@@ -1,12 +1,10 @@
 local soap = require"soap.client"
 local https =  require"ssl.https"
 local http = require"socket.http"
-local utils = require"utils"
-local conf = require"configuration"
+local utils = require"npssdk.utils"
+local conf = require"npssdk.configuration"
 
-local SoapClient = {
-    
-}
+local SoapClient = {}
 SoapClient.__index = SoapClient
 
 function SoapClient.call(service, params)

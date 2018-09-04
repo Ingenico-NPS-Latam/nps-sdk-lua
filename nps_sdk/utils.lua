@@ -1,7 +1,7 @@
 local md5 = require"md5"
 local soap = require"soap"
-sanitize = require"sanitize"
-version = require"version"
+sanitize = require"npssdk.sanitize"
+version = require"npssdk.version"
 
 local Utils = {}
 Utils.__index = Utils
@@ -264,7 +264,7 @@ function Utils.add_add_details(params)
     if (params["psp_MerchantAdditionalDetails"]) then
         add_details = params["psp_MerchantAdditionalDetails"]
     end
-    add_details["SdkInfo"] = "Lua SDK Version: " .. version.version
+    add_details["SdkInfo"] = "Lua SDK Version: " .. version
     params["psp_MerchantAdditionalDetails"] = add_details
     return params
 end

@@ -1,6 +1,6 @@
-local soapclient = require"soapclient"
-local services = require"services"
-local def_conf = require"configuration"
+local soapclient = require"npssdk.soapclient"
+local services = require"npssdk.services"
+local def_conf = require"npssdk.configuration"
 
 local npssdk = {
     SANDBOX_ENV = "https://sandbox.nps.com.ar/ws.php",

@@ -1,4 +1,4 @@
-local version = "1.0.9"
+local version = "1.0.10"
 
 local Version = {}
 return version

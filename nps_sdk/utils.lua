@@ -1,7 +1,9 @@
 local md5 = require"md5"
 local soap = require"soap"
+local crypto = require"crypto"
 sanitize = require"npssdk.sanitize"
 version = require"npssdk.version"
+services = require"npssdk.services"
 
 local Utils = {}
 Utils.__index = Utils
@@ -107,6 +109,7 @@ end
 function Utils.add_secure_hash(params, thekey)
     local tempTable = {}
     tempTable.tag = "psp_SecureHash"
+    local hmac_hash = create_hmac_sha256(concat_params(params, ""), thekey)
     tempTable[1] = build_secure_hash(params, thekey)
     params[#params+1] = tempTable
     return params
@@ -115,6 +118,10 @@ end
 function build_secure_hash(params, thekey)
     local concatenated_params = concat_params(params, thekey)
     return md5.sumhexa(concatenated_params)
+end
+
+function create_hmac_sha256(message, key)
+    return crypto.hmac.digest('sha256', message, key, false)
 end
 
 function pairsByKeys (t, f)
@@ -268,5 +275,29 @@ function Utils.add_add_details(params)
     params["psp_MerchantAdditionalDetails"] = add_details
     return params
 end
+
+function Utils.is_value_in_array (valor, array)
+    for i, name in ipairs(array) do
+        if name == valor then
+            return true
+        end
+    end
+
+    return false
+end
+
+function Utils.is_client_session_in_params (params)
+    for i, name in ipairs(params) do
+        for key, value in pairs(name) do
+            if (value == 'psp_ClientSession') then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
+
 
 return Utils

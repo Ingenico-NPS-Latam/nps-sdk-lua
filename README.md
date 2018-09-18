@@ -48,7 +48,7 @@ resp = nps.payonline_2p(p2p)
 
 ```
 
-## environments
+## Environments
 
 ```lua
 local nps = require("npssdk")
@@ -107,7 +107,7 @@ nps.configuration.sanitize = true
 
 ### Timeout
 
-you can change the timeout of the request.
+You can change the timeout of the request.
 
 ```lua
 local nps = require("npssdk")

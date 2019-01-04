@@ -109,8 +109,8 @@ end
 function Utils.add_secure_hash(params, thekey)
     local tempTable = {}
     tempTable.tag = "psp_SecureHash"
-    local hmac_hash = create_hmac_sha256(concat_params(params, ""), thekey)
-    tempTable[1] = build_secure_hash(params, thekey)
+    local secure_hash = create_hmac_sha256(concat_params(params, ""), thekey)
+    tempTable[1] = secure_hash
     params[#params+1] = tempTable
     return params
 end
@@ -122,6 +122,10 @@ end
 
 function create_hmac_sha256(message, key)
     return crypto.hmac.digest('sha256', message, key, false)
+end
+
+function create_hmac_sha512(message, key)
+    return crypto.hmac.digest('sha512', message, key, false)
 end
 
 function pairsByKeys (t, f)

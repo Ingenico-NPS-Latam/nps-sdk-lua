@@ -1,3 +1,7 @@
+# IDEs and editors
+/.idea/
+/.vscode/
+
 *.txt
 main.lua
 *.rock
